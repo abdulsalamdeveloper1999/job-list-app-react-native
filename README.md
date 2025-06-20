@@ -1,6 +1,6 @@
-# Threads Clone – React Native Expo App
+# Job App – React Native Expo App
 
-A simple job board mobile app built with [Expo](https://expo.dev) and React Native, inspired by Threads. Users can browse, post, and view job listings, with authentication powered by Firebase.
+A simple job board mobile app built with [Expo](https://expo.dev) and React Native, inspired by Glassdoor. Users can browse, post, and view job listings, with authentication powered by Firebase.
 
 ## Features
 
