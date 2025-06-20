@@ -27,6 +27,7 @@ export default function SignUp() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("User created successfully");
+      router.back();
     } catch (error: any) {
       alert(`error creating user: ${error.message}`);
     } finally {
@@ -45,6 +46,7 @@ export default function SignUp() {
           </Text>
 
           <TextInput
+            autoCapitalize="none"
             style={styles.input}
             outlineStyle={{ borderRadius: 12 }}
             activeOutlineColor="#F5511D"
@@ -58,6 +60,7 @@ export default function SignUp() {
           />
 
           <TextInput
+            autoCapitalize="none"
             outlineStyle={{ borderRadius: 12 }}
             style={styles.input}
             activeOutlineColor="#F5511D"

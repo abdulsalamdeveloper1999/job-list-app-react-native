@@ -17,10 +17,11 @@ export default function Home() {
   const choiceChips = ["All", "Saved", "Applied"];
   const [jobs, setJobs] = useState<JobModel[]>([]);
   const { setSelectedJob } = useJob();
+  const [selectedChip, setSelectedChip] = useState("All"); // default selection
 
   useEffect(() => {
     getJobs();
-  }, []);
+  }, [jobs]);
 
   const getJobs = async () => {
     const res = await FirestoreOperations.getJobs();
@@ -43,6 +44,7 @@ export default function Home() {
           alignItems: "flex-start",
           flexDirection: "row",
           gap: 16,
+          marginBottom: 16,
           width: "100%",
         }}
       >
@@ -104,11 +106,15 @@ export default function Home() {
           <View style={styles.choiceChip}>
             {choiceChips.map((choice) => (
               <Chip
-                style={{ backgroundColor: "#F5511D20" }}
-                background={{ color: "#F5511D20" }}
-                textStyle={{ color: "#F5511D" }}
                 key={choice}
-                onPress={() => console.log(choice)}
+                onPress={() => setSelectedChip(choice)}
+                style={{
+                  backgroundColor:
+                    selectedChip === choice ? "#F5511D" : "#F5511D20",
+                }}
+                textStyle={{
+                  color: selectedChip === choice ? "#fff" : "#F5511D",
+                }}
               >
                 {choice}
               </Chip>

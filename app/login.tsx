@@ -42,6 +42,7 @@ export default function Login() {
           <Text style={styles.subtitle}>Welcome back</Text>
 
           <TextInput
+            autoCapitalize="none"
             style={styles.input}
             outlineStyle={{ borderRadius: 12 }}
             activeOutlineColor="#F5511D"
@@ -55,6 +56,7 @@ export default function Login() {
           />
 
           <TextInput
+            autoCapitalize="none"
             outlineStyle={{ borderRadius: 12 }}
             style={styles.input}
             activeOutlineColor="#F5511D"

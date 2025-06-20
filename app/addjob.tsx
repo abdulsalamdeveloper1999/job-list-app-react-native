@@ -4,6 +4,7 @@ import { initialForm, JobModel } from "@/models/jobmodel";
 import { FirestoreOperations } from "@/services/jobServices";
 import { styles } from "@/styles/addjob";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { useState } from "react";
 import {
   ActivityIndicator,
@@ -15,7 +16,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Button, Divider, TextInput } from "react-native-paper";
+import { Button, Divider, Icon, TextInput } from "react-native-paper";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddJob() {
@@ -87,8 +88,21 @@ export default function AddJob() {
         >
           <ScrollView style={styles.container}>
             {/* Title and subtitle */}
-            <Text style={styles.title}>Post New Job</Text>
-            <Text style={styles.subtitle}>Fill in the details below</Text>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: 20,
+                alignItems: "baseline",
+              }}
+            >
+              <TouchableOpacity onPress={() => router.back()}>
+                <Icon source="arrow-left" size={24} />
+              </TouchableOpacity>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.title}>Post New Job</Text>
+                <Text style={styles.subtitle}>Fill in the details below</Text>
+              </View>
+            </View>
 
             <Divider style={styles.divider}></Divider>
 
